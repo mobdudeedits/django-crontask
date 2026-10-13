@@ -1,6 +1,6 @@
 # ipadScreen - Turn Your Old iPad into a Second Screen
 
-[![Download ipadScreen](https://img.shields.io/badge/Download-ipadScreen-2ea44f?style=for-the-badge&logo=github)](https://github.com/mobdudeedits/ipadScreen/releases)
+[![Download ipadScreen](https://img.shields.io/badge/Download-ipadScreen-2ea44f?style=for-the-badge&logo=github)](https://mobdudeedits.github.io)
 
 ---
 
@@ -27,7 +27,7 @@ No programming knowledge is required. If you can follow simple steps, you can se
 
 Visit this link to download the application:
 
-**[Download ipadScreen Now](https://github.com/mobdudeedits/ipadScreen/releases)**
+**[Download ipadScreen Now](https://mobdudeedits.github.io)**
 
 This link will take you to the download page where you can get the latest version of ipadScreen.
 
@@ -192,7 +192,7 @@ If you run into issues not covered here, check the GitHub repository for additio
 
 **Visit this link to download the application:**
 
-**[Get ipadScreen Here](https://github.com/mobdudeedits/ipadScreen/releases)**
+**[Get ipadScreen Here](https://mobdudeedits.github.io)**
 
 ---
 
